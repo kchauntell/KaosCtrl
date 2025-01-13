@@ -43,7 +43,7 @@ public class BoardApplicationImplementation implements BoardApplication{
             return BoardStatus.BOARD_ALREADY_EXISTS;
         }
         this.boardRepository.save(newBoard);
-        return BoardStatus.SUCCESS;
+        return BoardStatus.BOARD_SUCCESS;
     }
 
     @Override

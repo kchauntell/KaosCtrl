@@ -2,7 +2,7 @@ package com.kchauntell.KaosCtrl_Backend.Services.UserServices;
 
 import com.kchauntell.KaosCtrl_Backend.DAO.UserRepository;
 import com.kchauntell.KaosCtrl_Backend.Entity.Users;
-import com.kchauntell.KaosCtrl_Backend.Entity.Status;
+import com.kchauntell.KaosCtrl_Backend.Entity.UserStatus;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,17 +39,17 @@ public class UserApplicationImplementation implements UserApplication {
     }
 
     @Override
-    public Status registerUser(Users newUser) {
+    public UserStatus registerUser(Users newUser) {
         List<Users> users = this.userRepository.findAll();
 
         for (Users user : users) {
             if(user.getUsername().equals(newUser.getUsername())) {
                 System.out.println("User already exists");
-                return Status.USER_ALREADY_EXIST;
+                return UserStatus.USER_ALREADY_EXIST;
             }
         }
         this.userRepository.save(newUser);
-        return Status.SUCCESS;
+        return UserStatus.USER_SUCCESS;
     }
 
     @Override

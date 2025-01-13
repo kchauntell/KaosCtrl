@@ -3,12 +3,11 @@ package com.kchauntell.KaosCtrl_Backend.Controller;
 import jakarta.validation.Valid;
 import com.kchauntell.KaosCtrl_Backend.DAO.UserRepository;
 import com.kchauntell.KaosCtrl_Backend.Entity.Users;
-import com.kchauntell.KaosCtrl_Backend.Entity.Status;
+import com.kchauntell.KaosCtrl_Backend.Entity.UserStatus;
 import com.kchauntell.KaosCtrl_Backend.Services.UserServices.UserApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Optional;
 
 @RestController()
 @CrossOrigin(origins = {"http://localhost:3000/"})
@@ -26,7 +25,7 @@ public class UserController {
     }
 
     @PostMapping("/registerUser")
-    public Status registerUser(@Valid @RequestBody Users user) throws Exception {
+    public UserStatus registerUser(@Valid @RequestBody Users user) throws Exception {
         return this.userApplication.registerUser(user);
     }
 
