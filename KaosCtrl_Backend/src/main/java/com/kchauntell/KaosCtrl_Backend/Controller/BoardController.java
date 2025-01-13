@@ -34,7 +34,7 @@ public class BoardController {
         return boardApplication.updateBoard(board);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/deleteBoard")
     public void deleteBoard(@RequestBody Boards board) throws Exception {
         this.boardApplication.deleteBoard(board);
     }
