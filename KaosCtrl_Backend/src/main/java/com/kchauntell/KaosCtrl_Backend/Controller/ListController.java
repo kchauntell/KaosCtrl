@@ -34,7 +34,7 @@ public class ListController {
         return this.listApplication.updateLists(lists);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/deleteList")
     public void deleteList(@RequestBody @Valid Lists lists) throws Exception{
         this.listApplication.deleteLists(lists);
     }
