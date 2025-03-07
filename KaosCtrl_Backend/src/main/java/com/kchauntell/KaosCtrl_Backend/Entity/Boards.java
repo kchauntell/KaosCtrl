@@ -36,7 +36,7 @@ public class Boards {
             String description,
             LocalDateTime createdAt,
             LocalDateTime updatedAt,
-            int user_id) {
+            long user_id) {
         this.name = name;
         this.description = description;
         this.createdAt = createdAt;
