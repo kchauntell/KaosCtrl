@@ -11,8 +11,8 @@ import java.util.Optional;
 public interface CardApplication {
     public List<Cards> getCards();
     public Optional<Cards> getCardById(int card_id);
-    public Optional<Cards> findCardByAssignedUserId(int assignedUserId);
-    public GeneralStatus createCard(Cards card) throws Exception;
+    public Optional<Cards> findCardByTitle(String title);
+    public GeneralStatus createCard(Cards newCard) throws Exception;
     public Cards updateCard(Cards card) throws Exception;
-    public void deleteCard(int card_id) throws Exception;
+    public void deleteCard(Cards card) throws Exception;
 }
